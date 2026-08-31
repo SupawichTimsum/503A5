@@ -1,185 +1,130 @@
 {
   "info": {
-    "_postman_id": "dc2591f8-0995-4dcc-a9cc-7ae68929dd7f",
-    "name": "VacQ A4",
+    "_postman_id": "1885fc95-e6e9-42e7-be74-c72df67c1729",
+    "name": "VacQ",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "15205475"
+    "_exporter_id": "50045275",
+    "_collection_link": "https://go.postman.co/collection/50045275-1885fc95-e6e9-42e7-be74-c72df67c1729?source=collection_link"
   },
   "item": [
     {
-      "name": "get all",
-      "event": [
+      "name": "Hospitals",
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
+          "name": "Get All Hospitals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/hospitals",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hospitals"
+              ]
+            },
+            "description": "Fetch all hospitals from database."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Hospital",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/hospitals/6a95bd2f575fb1a718db9ef3",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hospitals",
+                "6a95bd2f575fb1a718db9ef3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Hospital",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/hospitals",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hospitals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Single Hospital",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/hospitals/1",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hospitals",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Single Hospital",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/hospitals/1",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hospitals",
+                "1"
+              ]
+            }
+          },
+          "response": []
         }
       ],
+      "description": "Hospital CRUD functionality"
+    },
+    {
+      "name": "Test google",
       "request": {
+        "auth": {
+          "type": "noauth"
+        },
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:5000/api/v1/hospitals/",
-          "protocol": "http",
+          "raw": "google.com",
           "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "v1",
-            "hospitals",
-            ""
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "post 201",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              "\r",
-              ""
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/api/v1/hospitals/",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "v1",
-            "hospitals",
-            ""
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "get one",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/api/v1/hospitals/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "v1",
-            "hospitals",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "put",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "PUT",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/api/v1/hospitals/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "v1",
-            "hospitals",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "delete",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/api/v1/hospitals/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5000",
-          "path": [
-            "api",
-            "v1",
-            "hospitals",
-            "1"
+            "google",
+            "com"
           ]
         }
       },
